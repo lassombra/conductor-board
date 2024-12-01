@@ -1,0 +1,10 @@
+{
+	"Name": "Conductor Board",
+	"Description": "Shows where your train needs to go and how long it is",
+	"Amount": 5,
+	"Price": 500,
+	"AssetBundleName": "board",
+	"PrefabPath": "Assets/export/conductor-board.prefab",
+	"IconStandardPath": "Assets/export/icon.png",
+	"IconDroppedPath": "Assets/export/icon-missing.png"
+}

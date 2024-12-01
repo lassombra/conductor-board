@@ -1,0 +1,8 @@
+{
+	"Id": "ConductorClipboard",
+	"Version": "0.0.1",
+	"DisplayName": "Conductor Clipboard",
+	"Author": "lassombra",
+	"ManagerVersion": "0.27.3",
+	"Repository": "https://raw.githubusercontent.com/lassombra/conductor-clipboard/main/repository.json"
+}
