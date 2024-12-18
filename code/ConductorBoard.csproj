@@ -14,5 +14,35 @@
   <ItemGroup>
     <None Include="$(SolutionDir)..\item\**" CopyToOutputDirectory="PreserveNewest" LinkBase="item\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Publicizer" Version="2.2.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GadgetUnity\GadgetUnity.csproj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DV.Utils" />
+    <Reference Include="0Harmony" />
+    <Reference Include="Assembly-CSharp" />
+    <Reference Include="UnityModManager" />
+    <Reference Include="Unity.TextMeshPro" />
+    <Reference Include="UnityEngine" />
+    <Reference Include="UnityEngine.UI" />
+    <Reference Include="UnityEngine.CoreModule" />
+    <Reference Include="UnityEngine.AudioModule" />
+    <Reference Include="custom_item_mod" />
+    <Reference Include="custom_item_components" />
+    <Reference Include="Newtonsoft.Json" />
+  </ItemGroup>
 
+  <!-- Publicizer config-->
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp" IncludeVirtualMembers="false" IncludeCompilerGeneratedMembers="false" />
+  </ItemGroup>
 </Project>
