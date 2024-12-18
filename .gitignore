@@ -364,3 +364,7 @@ FodyWeavers.xsd
 item/board
 Unity/Conductors Board/Library/
 /Unity/Conductors Board/Temp
+/build/ConductorBoard.dll
+/build/item/board
+/build/item/item_info.json
+/build/GadgetUnity.dll
