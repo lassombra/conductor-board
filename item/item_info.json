@@ -4,7 +4,8 @@
 	"Amount": 5,
 	"Price": 500,
 	"AssetBundleName": "board",
-	"PrefabPath": "Assets/export/conductor-board.prefab",
+	"PrefabPath": "Assets/export/board-base-item.prefab",
 	"IconStandardPath": "Assets/export/icon.png",
-	"IconDroppedPath": "Assets/export/icon-missing.png"
+	"IconDroppedPath": "Assets/export/icon-missing.png",
+	"ShelfPrefabPath": "Assets/export/board-base-display.prefab"
 }

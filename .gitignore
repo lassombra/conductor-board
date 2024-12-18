@@ -373,3 +373,39 @@ Unity/Conductors Board/Library/
 /Unity/Conductors Board/Assets/AssetBundles/AssetBundles.manifest
 /Unity/Conductors Board/Assets/AssetBundles/board
 /Unity/Conductors Board/Assets/AssetBundles/board.manifest
+/Unity/Conductors Board/Assets/editor/Export.cs
+/Unity/Conductors Board/Assets/export/board 1.png
+/Unity/Conductors Board/Assets/export/board-base-display.prefab
+/Unity/Conductors Board/Assets/export/board-base-gadget.prefab
+/Unity/Conductors Board/Assets/export/board-base-item.prefab
+/Unity/Conductors Board/Assets/export/board-base.prefab
+/Unity/Conductors Board/Assets/export/Board.mat
+/Unity/Conductors Board/Assets/export/board.png
+/Unity/Conductors Board/Assets/export/conductor-board-gadget.prefab
+/Unity/Conductors Board/Assets/export/conductor-board-shelf.prefab
+/Unity/Conductors Board/Assets/export/conductor-board.prefab
+/Unity/Conductors Board/Assets/export/cour SDF.asset
+/Unity/Conductors Board/Assets/export/cour.ttf
+/Unity/Conductors Board/Assets/Scenes/SampleScene.unity
+/Unity/Conductors Board/Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+/Unity/Conductors Board/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset
+/Unity/Conductors Board/Assets/TextMesh Pro/Resources/TMP Settings.asset
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_SDF.shader
+/Unity/Conductors Board/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader
+/Unity/Conductors Board/Assets/custom_item_components.dll
+/Unity/Conductors Board/Assets/GadgetUnity.dll

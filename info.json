@@ -4,5 +4,8 @@
 	"DisplayName": "Conductor Clipboard",
 	"Author": "lassombra",
 	"ManagerVersion": "0.27.3",
+	"Requirements": [ "custom_item_mod" ],
+	"EntryMethod": "ConductorBoard.Main.Load",
+	"AssemblyName": "ConductorBoard.dll",
 	"Repository": "https://raw.githubusercontent.com/lassombra/conductor-clipboard/main/repository.json"
 }
