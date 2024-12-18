@@ -368,3 +368,4 @@ Unity/Conductors Board/Library/
 /build/item/board
 /build/item/item_info.json
 /build/GadgetUnity.dll
+/code/Directory.Build.targets
