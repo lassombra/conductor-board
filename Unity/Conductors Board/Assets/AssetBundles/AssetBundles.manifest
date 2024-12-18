@@ -1,7 +1,0 @@
-ManifestFileVersion: 0
-CRC: 3899733380
-AssetBundleManifest:
-  AssetBundleInfos:
-    Info_0:
-      Name: board
-      Dependencies: {}

@@ -368,4 +368,8 @@ Unity/Conductors Board/Library/
 /build/item/board
 /build/item/item_info.json
 /build/GadgetUnity.dll
-/code/Directory.Build.targets
+*.targets
+/Unity/Conductors Board/Assets/AssetBundles/AssetBundles
+/Unity/Conductors Board/Assets/AssetBundles/AssetBundles.manifest
+/Unity/Conductors Board/Assets/AssetBundles/board
+/Unity/Conductors Board/Assets/AssetBundles/board.manifest
