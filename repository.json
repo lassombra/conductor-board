@@ -2,8 +2,8 @@
 	"Releases": [
 		{
 			"Id": "ConductorClipboard",
-			"Version": "0.0.1",
-			"DownloadUrl": "https://github.com/lassombra/conductor-clipboard/releases/download/0.0.1/ConductorClipboard.zip"
+			"Version": "0.0.2",
+			"DownloadUrl": "https://github.com/lassombra/conductor-clipboard/releases/download/0.0.2/ConductorClipboard.zip"
 		}
 	]
 }
