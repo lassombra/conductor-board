@@ -4,9 +4,8 @@ using DV.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TMPro;
+using Unity.Jobs;
 
 namespace ConductorBoard
 {
@@ -16,6 +15,7 @@ namespace ConductorBoard
         public TextMeshPro body;
         public TextMeshPro train;
         private ConductorBoardData data;
+        private Dictionary<Job, List<Task>> taskMap = new ();
 
         protected override void OnItemAssigned()
         {
@@ -72,7 +72,7 @@ namespace ConductorBoard
                 length += destination.length;
                 mass += destination.mass;
             }
-            var trainText = $"============================\nMass: {Math.Ceiling(mass / 1000)}t | Length: {Math.Ceiling(length)}m";
+            var trainText = $"============================\nMass: {System.Math.Ceiling(mass / 1000)}t | Length: {System.Math.Ceiling(length)}m";
             WriteText(headerText, bodyText, trainText);
         }
         private void WriteText(string header, string body, string train)
@@ -137,49 +137,96 @@ namespace ConductorBoard
                 }
                 yield return destination;
             }
+            taskMap.Clear();
         }
         private string DestinationTrack(TrainCar car)
         {
             var job = SingletonBehaviour<JobsManager>.Instance.GetJobOfCar(car);
             if (job == null)
             {
-                return "No Dest";
+                return "-----";
             }
-            return GetNextTrack(job);
+            return GetNextTrack(job, car);
         }
-        private string GetNextTrack(Job job)
+        private string GetNextTrack(Job job, TrainCar car)
         {
-            foreach (var task in job.tasks)
+            var tasks = new List<Task>();
+            if (taskMap.ContainsKey(job))
             {
-                if (!task.IsTaskCompleted())
+                tasks = taskMap[job];
+            } else
+            {
+                tasks = GetTracks(job).ToList();
+                taskMap[job] = tasks;
+            }
+            foreach (var task in tasks)
+            {
+                if (!task.IsTaskCompleted() && IsTaskForCar(task, car))
                 {
-                    return GetNextTrack(task);
+                    return TrackForTask(task);
                 }
             }
-            return "No Dest";
+            return "-----";
         }
-        private String GetNextTrack(DV.Logic.Job.Task task)
+
+        private string TrackForTask(Task task)
         {
             switch (task.InstanceTaskType)
             {
-                case TaskType.Sequential:
-                    return GetNextTrack(((SequentialTasks)task).currentTask.Value);
-                case TaskType.Parallel:
-                    return GetNextTrack(((ParallelTasks)task).tasks);
-                default:
-                    return task.GetTaskData().destinationTrack.ID.FullDisplayID;
+                case TaskType.Warehouse:
+                    return ((WarehouseTask)task).warehouseMachine.WarehouseTrack.ID.FullDisplayID;
+                case TaskType.Transport:
+                    return ((TransportTask)task).destinationTrack.ID.FullDisplayID;
             }
+            return "-----";
         }
-        private String GetNextTrack(List<DV.Logic.Job.Task> tasks)
+
+        private bool IsTaskForCar(Task task, TrainCar car)
         {
-            foreach (var task in tasks)
+            switch (task.InstanceTaskType) {
+                case TaskType.Warehouse:
+                    return ((WarehouseTask)task).cars.Contains(car.logicCar);
+                case TaskType.Transport:
+                    return ((TransportTask)task).cars.Contains(car.logicCar);
+            }
+            return false;
+        }
+        private IEnumerable<Task> GetTracks(Job job)
+        {
+            return GetSubTasks(job.tasks);
+        }
+        private IEnumerable<Task> GetSubTasks(List<Task> taskList)
+        {
+            foreach (var task in taskList)
             {
-                if (!task.IsTaskCompleted())
+                switch (task.InstanceTaskType)
                 {
-                    return GetNextTrack(task);
+                    case TaskType.Warehouse:
+                    case TaskType.Transport:
+                        yield return task;
+                        break;
+                    case TaskType.Parallel:
+                        foreach (var subTask in GetSubTasks((ParallelTasks)task))
+                        {
+                            yield return subTask;
+                        }
+                        break;
+                    case TaskType.Sequential:
+                        foreach (var subTask in GetSubTasks((SequentialTasks)task))
+                        {
+                            yield return subTask;
+                        }
+                        break;
                 }
             }
-            return "No Dest";
+        }
+        private IEnumerable<Task> GetSubTasks(ParallelTasks task)
+        {
+            return GetSubTasks(task.tasks);
+        }
+        private IEnumerable<Task> GetSubTasks(SequentialTasks task)
+        {
+            return GetSubTasks(task.tasks.ToList());
         }
 
         private struct DestinationList
