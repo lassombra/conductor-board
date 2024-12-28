@@ -55,6 +55,7 @@ namespace ConductorBoard
             if (base.TrainCar == null)
             {
                 WriteText("", "", "");
+                return;
             }
             var carId = base.TrainCar.logicCar.ID;
             var cars = WalkTrain();
